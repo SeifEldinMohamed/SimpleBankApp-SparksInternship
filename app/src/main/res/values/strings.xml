@@ -1,8 +1,19 @@
 <resources>
     <string name="app_name">Simple Bank App</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="clients">Clients</string>
     <string name="transactions">Transactions</string>
     <string name="about">About</string>
+    <string name="seif_mohamed">Seif Mohamed</string>
+    <string name="age_20_years">20 years</string>
+    <string name="country_egypt">Egypt</string>
+    <string name="email_seifeldinmohamed101_gmail_com">seifeldinmohamed101@gmail.com</string>
+    <string name="google_play_icon_for_about_fragment">google play icon for about fragment</string>
+    <string name="linked_in_icon_for_about_fragment">linked in icon for about fragment</string>
+    <string name="facebook_icon_for_about_fragment">facebook icon for about fragment</string>
+    <string name="balance_item_row">1000000 EG</string>
+    <string name="junior_android_developer">Junior Android Developer</string>
+    <string name="email_for_about_fragment">email icon for about fragment</string>
+    <string name="place_icon_for_about_fragment">place icon for about fragment</string>
+    <string name="job_icon_for_about_fragment">job icon for about fragment</string>
 </resources>

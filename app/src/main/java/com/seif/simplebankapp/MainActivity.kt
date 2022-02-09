@@ -3,6 +3,7 @@ package com.seif.simplebankapp
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.seif.simplebankapp.databinding.ActivityMainBinding
@@ -15,6 +16,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         val navController = findNavController(R.id.nav_host)
         binding.bottomNavigationView.setupWithNavController(navController)
-        setupActionBarWithNavController(navController)
+        val appBarCompatActivity = AppBarConfiguration(setOf(R.id.clientsFragment, R.id.transactionsFragment, R.id.aboutFragment))
+        setupActionBarWithNavController(navController, appBarCompatActivity)
     }
 }
