@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="mediumBlack">#151B20</color>
+    <color name="MediumGray">#313C44</color>
+    <color name="lightGray">#DFDFDF</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="TealGreen">#128C7E</color>
+    <color name="darkGray">#707070</color>
+
+    <color name="background">@color/MediumGray</color>
+    <color name="item_row_background">@color/mediumBlack</color>
+    <color name="activeBottomNavColor">@color/TealGreen</color>
+    <color name="inActiveBottomNavColor">@color/darkGray</color>
+    <color name="border">@color/lightGray</color>
+    <color name="textColor">@color/lightGray</color>
+    <color name="bottom_nav_background">@color/mediumBlack</color>
+
+</resources>
