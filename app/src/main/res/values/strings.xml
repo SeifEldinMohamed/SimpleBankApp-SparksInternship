@@ -16,4 +16,5 @@
     <string name="email_for_about_fragment">email icon for about fragment</string>
     <string name="place_icon_for_about_fragment">place icon for about fragment</string>
     <string name="job_icon_for_about_fragment">job icon for about fragment</string>
+    <string name="select_client_fragment">select client fragment</string>
 </resources>
