@@ -9,12 +9,14 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.seif.simplebankapp.data.models.Clients
 import com.seif.simplebankapp.databinding.FragmentClientsBinding
+import com.seif.simplebankapp.ui.adapters.ClientsAdapter
 import com.seif.simplebankapp.viewmodels.ClientsViewModel
 
 
 class ClientsFragment : Fragment() {
     lateinit var binding: FragmentClientsBinding
-    lateinit var clientsViewModel: ClientsViewModel
+    private lateinit var clientsViewModel: ClientsViewModel
+    private val clientsAdapter by lazy { ClientsAdapter() }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -29,9 +31,21 @@ class ClientsFragment : Fragment() {
         clientsViewModel = ViewModelProvider(requireActivity())[ClientsViewModel::class.java]
 
         clientsViewModel.clients.observe(viewLifecycleOwner, Observer {
-
+            clientsAdapter.setData(it)
         })
-        val clients = listOf<Clients>(
+        val clients = setUpDummyClients()
+        clientsViewModel.addClients(clients)
+
+        setUpRecyclerView()
+
+    }
+
+    private fun setUpRecyclerView() {
+        binding.rvClients.adapter = clientsAdapter
+    }
+
+    private fun setUpDummyClients(): List<Clients> {
+        return listOf<Clients>(
             Clients(
                 1,
                 "Seif Mohamed",
@@ -42,7 +56,7 @@ class ClientsFragment : Fragment() {
                 100000.0
             ),
             Clients(
-                1,
+                2,
                 "Hazem Khaled",
                 "hazem@gmail.com",
                 "0123456789",
@@ -51,17 +65,77 @@ class ClientsFragment : Fragment() {
                 20000.0
             ),
             Clients(
-                1,
+                3,
                 "Kareem Galal",
-                "kareem.com",
+                "kareem@gmail.com",
                 "0123456789",
                 "2503",
                 "BCE2503",
                 1000.0
+            ),
+            Clients(
+                4,
+                "Ahmed Tarek",
+                "ahmed@gmail.com",
+                "0123456789",
+                "2504",
+                "BCE2504",
+                50000.0
+            ),
+            Clients(
+                5,
+                "Ashraf Abbas",
+                "ashraf@gmail.com",
+                "0123456789",
+                "2505",
+                "BCE2505",
+                30000.0
+            ),
+            Clients(
+                6,
+                "Mohamed Hassan",
+                "mohamed@gmail.com",
+                "0123456789",
+                "2506",
+                "BCE2506",
+                50000.0
+            ),
+            Clients(
+                7,
+                "Youssef Atef",
+                "youssef@gmail.com",
+                "0123456789",
+                "2507",
+                "BCE2507",
+                7000.0
+            ),
+            Clients(
+                8,
+                "Ibrahim Khaled",
+                "ibrahim@gmail.com",
+                "0123456789",
+                "2508",
+                "BCE2508",
+                800000.0
+            ),
+            Clients(
+                9,
+                "Mustafa Hassan",
+                "mustafa@gmail.com",
+                "0123456789",
+                "2508",
+                "BCE2508",
+                40000.0
+            ),
+            Clients(
+                10,
+                "Khaled Hassan",
+                "khaled@gmail.com",
+                "0123456789",
+                "2510",
+                "BCE2510",
+                70000.0
             )
         )
-        clientsViewModel.addClients(clients)
-
     }
-
 }
