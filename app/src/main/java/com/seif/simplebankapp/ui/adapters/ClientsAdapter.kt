@@ -3,10 +3,14 @@ package com.seif.simplebankapp.ui.adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.seif.simplebankapp.R
 import com.seif.simplebankapp.data.models.Clients
 import com.seif.simplebankapp.databinding.ItemRowClientBinding
+import com.seif.simplebankapp.ui.fragments.ClientsFragment
+import com.seif.simplebankapp.ui.fragments.ClientsFragmentDirections
 
 class ClientsAdapter : RecyclerView.Adapter<ClientsAdapter.MyViewHolder>() {
     var clientsData = emptyList<Clients>()
@@ -16,6 +20,10 @@ class ClientsAdapter : RecyclerView.Adapter<ClientsAdapter.MyViewHolder>() {
                 binding.txtClientName.text = clients[position].clientName
                 val balance = clients[position].currentBalance.toInt().toString() + " EG"
                 binding.txtBalance.text = balance
+                binding.itemRowClient.setOnClickListener {
+                    val action =  ClientsFragmentDirections.actionClientsFragmentToClientInfoFragment(clients[position])
+                    itemView.findNavController().navigate(action)
+                }
             }
     }
 

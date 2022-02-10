@@ -7,6 +7,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="TealGreen">#128C7E</color>
     <color name="darkGray">#707070</color>
+    <color name="darkTealGreen">#06776A</color>
 
     <color name="background">@color/MediumGray</color>
     <color name="item_row_background">@color/mediumBlack</color>
