@@ -22,13 +22,20 @@
     <fragment
         android:id="@+id/aboutFragment"
         android:name="com.seif.simplebankapp.ui.fragments.AboutFragment"
-        android:label="fragment_about"
+        android:label="About"
         tools:layout="@layout/fragment_about" />
     <fragment
         android:id="@+id/selectClientFragment"
         android:name="com.seif.simplebankapp.ui.fragments.SelectClientFragment"
         android:label="fragment_select_client"
-        tools:layout="@layout/fragment_select_client" />
+        tools:layout="@layout/fragment_select_client" >
+        <argument
+            android:name="fromClient"
+            app:argType="com.seif.simplebankapp.data.models.Clients" />
+        <argument
+            android:name="money"
+            app:argType="float" />
+    </fragment>
     <fragment
         android:id="@+id/clientInfoFragment"
         android:name="com.seif.simplebankapp.ClientInfoFragment"
@@ -37,5 +44,8 @@
         <argument
             android:name="Client"
             app:argType="com.seif.simplebankapp.data.models.Clients" />
+        <action
+            android:id="@+id/action_clientInfoFragment_to_selectClientFragment"
+            app:destination="@id/selectClientFragment" />
     </fragment>
 </navigation>

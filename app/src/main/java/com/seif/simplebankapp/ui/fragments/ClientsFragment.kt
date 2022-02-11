@@ -35,9 +35,7 @@ class ClientsFragment : Fragment() {
         })
         val clients = setUpDummyClients()
         clientsViewModel.addClients(clients)
-
         setUpRecyclerView()
-
     }
 
     private fun setUpRecyclerView() {
