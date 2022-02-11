@@ -15,7 +15,7 @@ import com.seif.simplebankapp.ui.fragments.ClientsFragmentDirections
 class ClientsAdapter : RecyclerView.Adapter<ClientsAdapter.MyViewHolder>() {
     var clientsData = emptyList<Clients>()
 
-    class MyViewHolder(private val binding: ItemRowClientBinding) : RecyclerView.ViewHolder(binding.root) {
+  inner class MyViewHolder(private val binding: ItemRowClientBinding) : RecyclerView.ViewHolder(binding.root) {
             fun bind(position: Int, clients: List<Clients>){
                 binding.txtClientName.text = clients[position].clientName
                 val balance = clients[position].currentBalance.toInt().toString() + " EG"

@@ -8,9 +8,9 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.lifecycle.AndroidViewModel
 import androidx.navigation.findNavController
-import com.seif.simplebankapp.ClientInfoFragmentDirections
 import com.seif.simplebankapp.R
 import com.seif.simplebankapp.data.models.Clients
+import com.seif.simplebankapp.ui.fragments.ClientInfoFragmentDirections
 
 class ClientInfoViewModel(application: Application): AndroidViewModel(application) {
 

@@ -1,5 +1,7 @@
 package com.seif.simplebankapp.ui.fragments
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -17,6 +19,7 @@ class ClientsFragment : Fragment() {
     lateinit var binding: FragmentClientsBinding
     private lateinit var clientsViewModel: ClientsViewModel
     private val clientsAdapter by lazy { ClientsAdapter() }
+    private lateinit var shared :SharedPreferences
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -29,13 +32,19 @@ class ClientsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         clientsViewModel = ViewModelProvider(requireActivity())[ClientsViewModel::class.java]
+        shared = view.context.getSharedPreferences("isFirstTime", Context.MODE_PRIVATE)
 
         clientsViewModel.clients.observe(viewLifecycleOwner, Observer {
             clientsAdapter.setData(it)
         })
-        val clients = setUpDummyClients()
-        clientsViewModel.addClients(clients)
         setUpRecyclerView()
+        if(shared.getBoolean("check",true)){
+           val clients = setUpDummyClients()
+           clientsViewModel.addClients(clients)
+           val editor = shared.edit()
+           editor.putBoolean("check",false)
+           editor.apply()
+       }
     }
 
     private fun setUpRecyclerView() {

@@ -11,7 +11,7 @@ private const val DATABASE_NAME = "bank_database"
 
 @Database(entities = [Clients::class, Transactions::class], version = 1, exportSchema = false)
 abstract class BankDatabase : RoomDatabase() {
-    abstract fun clientsDao(): ClientsDao
+    abstract fun clientsDao(): BankDatabaseDao
 
     companion object {
         @Volatile

@@ -1,20 +1,14 @@
-package com.seif.simplebankapp
+package com.seif.simplebankapp.ui.fragments
 
-import android.app.Dialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.Window
-import android.widget.Button
-import android.widget.EditText
-import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.fragment.findNavController
-import com.seif.simplebankapp.ClientInfoFragmentArgs.Companion.fromBundle
 import com.seif.simplebankapp.data.models.Clients
 import com.seif.simplebankapp.databinding.FragmentClientInfoBinding
+import com.seif.simplebankapp.ui.fragments.ClientInfoFragmentArgs.Companion.fromBundle
 import com.seif.simplebankapp.viewmodels.ClientInfoViewModel
 
 class ClientInfoFragment : Fragment() {
