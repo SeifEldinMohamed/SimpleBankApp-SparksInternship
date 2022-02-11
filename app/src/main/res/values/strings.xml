@@ -20,4 +20,24 @@
     <string name="phone_number">+201000883795</string>
     <string name="select_a_client_to_transfer_money">Select a client to transfer money</string>
     <string name="enter_money_to_transfer">Enter money to transfer</string>
+    <string name="cancel">Cancel</string>
+    <string name="money_hint">Money</string>
+    <string name="send">Send</string>
+    <string name="from_n_seif_mohamed">From:\n Seif Mohamed</string>
+    <string name="to_n_hazem_khaled">To:\n Hazem Khaled</string>
+    <string name="transaction_number">#1</string>
+    <string name="amount_1000">Amount: 1000</string>
+    <string name="my_phone_number">01000883795</string>
+    <string name="phone_number_txt">Phone Number:</string>
+    <string name="account_number">Account Number:</string>
+    <string name="ifsc_conde">20192504</string>
+    <string name="bce2501">BCE2501</string>
+    <string name="ifsc_code">IFSC Code</string>
+    <string name="money_eg">100000 EG</string>
+    <string name="current_balance">Current Balance</string>
+    <string name="email_txt">Email:</string>
+    <string name="transfer_money">Transfer Money</string>
+    <string name="account_number_icon">account number icon</string>
+    <string name="client_image">client image</string>
+    <string name="email_of_client">email of client</string>
 </resources>

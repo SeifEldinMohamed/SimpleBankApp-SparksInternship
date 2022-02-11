@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -24,7 +23,7 @@
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="8dp"
                 android:background="@drawable/btn_transfer_money"
-                android:text="Cancel"
+                android:text="@string/cancel"
                 android:textColor="@color/textColor"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -57,12 +56,13 @@
                 android:drawableStart="@drawable/money_icon_custom"
                 android:drawablePadding="4dp"
                 android:ems="10"
-                android:hint="Money"
+                android:hint="@string/money_hint"
                 android:inputType="number"
                 android:padding="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView6" />
+                app:layout_constraintTop_toBottomOf="@+id/textView6"
+                android:importantForAutofill="no" />
 
             <Button
                 android:id="@+id/btn_send"
@@ -72,7 +72,7 @@
                 android:layout_marginEnd="24dp"
                 android:layout_marginBottom="8dp"
                 android:background="@drawable/btn_transfer_money"
-                android:text="Send"
+                android:text="@string/send"
                 android:textColor="@color/textColor"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"

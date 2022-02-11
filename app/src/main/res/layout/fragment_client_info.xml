@@ -13,6 +13,7 @@
         android:layout_height="28dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:contentDescription="@string/account_number_icon"
         android:src="@drawable/ic_phone"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_account_number" />
@@ -23,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="54dp"
         android:layout_marginTop="8dp"
-        android:text="01000883795"
+        android:text="@string/my_phone_number"
         android:textColor="@color/textColor"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -35,7 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="16dp"
-        android:text="Phone Number:"
+        android:text="@string/phone_number_txt"
         android:textColor="@color/textColor"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView10"
@@ -48,6 +49,7 @@
         android:layout_height="28dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:contentDescription="@string/account_number"
         android:src="@drawable/ic_account_number"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_emaiil" />
@@ -57,7 +59,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:text="Account Number:"
+        android:text="@string/account_number"
         android:textColor="@color/textColor"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView9"
@@ -70,7 +72,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="54dp"
         android:layout_marginTop="8dp"
-        android:text="20192504"
+        android:text="@string/ifsc_conde"
         android:textColor="@color/textColor"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -90,6 +92,7 @@
             android:layout_width="130dp"
             android:layout_height="130dp"
             android:layout_marginTop="16dp"
+            android:contentDescription="@string/client_image"
             android:src="@drawable/ic_client"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -118,7 +121,8 @@
         android:weightSum="2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+        android:baselineAligned="false">
 
         <LinearLayout
             android:id="@+id/linearLayout2"
@@ -136,7 +140,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
-                android:text="BCE2501"
+                android:text="@string/bce2501"
                 android:textAlignment="center"
                 android:textColor="@color/textColor"
                 android:textSize="22sp" />
@@ -146,7 +150,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
-                android:text="IFSC Code"
+                android:text="@string/ifsc_code"
                 android:textAlignment="center"
                 android:textColor="@color/textColor"
                 android:textSize="21sp" />
@@ -169,7 +173,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
-                android:text="100000 EG"
+                android:text="@string/money_eg"
                 android:textAlignment="center"
                 android:textColor="@color/textColor"
                 android:textSize="22sp" />
@@ -179,7 +183,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
-                android:text="Current Balance"
+                android:text="@string/current_balance"
                 android:textAlignment="center"
                 android:textColor="@color/textColor"
                 android:textSize="21sp" />
@@ -192,7 +196,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:text="Email:"
+        android:text="@string/email_txt"
         android:textColor="@color/textColor"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView5"
@@ -205,6 +209,7 @@
         android:layout_height="28dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
+        android:contentDescription="@string/email_of_client"
         android:src="@drawable/ic_email"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
@@ -227,7 +232,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/btn_transfer_money"
         android:padding="14dp"
-        android:text="Transfer Money"
+        android:text="@string/transfer_money"
         android:textColor="@color/textColor"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
