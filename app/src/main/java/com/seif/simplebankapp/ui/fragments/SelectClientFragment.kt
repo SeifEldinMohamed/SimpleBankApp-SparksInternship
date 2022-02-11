@@ -12,6 +12,7 @@ import com.seif.simplebankapp.databinding.FragmentSelectClientBinding
 import com.seif.simplebankapp.ui.adapters.SelectClientAdapter
 import com.seif.simplebankapp.ui.fragments.SelectClientFragmentArgs.Companion.fromBundle
 import com.seif.simplebankapp.viewmodels.ClientsViewModel
+import jp.wasabeef.recyclerview.animators.ScaleInTopAnimator
 
 
 class SelectClientFragment : Fragment() {
@@ -42,6 +43,9 @@ lateinit var binding: FragmentSelectClientBinding
    private fun setUpRecyclerView(){
         binding.rvSelectedClient.adapter = selectClientAdapter
        // recycler animation
+       binding.rvSelectedClient.itemAnimator = ScaleInTopAnimator().apply {
+           addDuration = 200
+       }
     }
 
 }

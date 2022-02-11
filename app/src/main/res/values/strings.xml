@@ -17,4 +17,7 @@
     <string name="place_icon_for_about_fragment">place icon for about fragment</string>
     <string name="job_icon_for_about_fragment">job icon for about fragment</string>
     <string name="select_client_fragment">select client fragment</string>
+    <string name="phone_number">+201000883795</string>
+    <string name="select_a_client_to_transfer_money">Select a client to transfer money</string>
+    <string name="enter_money_to_transfer">Enter money to transfer</string>
 </resources>

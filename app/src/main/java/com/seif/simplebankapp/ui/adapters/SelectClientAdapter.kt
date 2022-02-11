@@ -6,11 +6,13 @@ import android.view.ViewGroup
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.seif.simplebankapp.R
 import com.seif.simplebankapp.data.models.Clients
 import com.seif.simplebankapp.data.models.Transactions
 import com.seif.simplebankapp.databinding.ItemRowClientBinding
+import com.seif.simplebankapp.utils.ClientsDiffUtil
 import com.seif.simplebankapp.viewmodels.ClientsViewModel
 import com.seif.simplebankapp.viewmodels.TransactionViewModel
 
@@ -54,7 +56,7 @@ class SelectClientAdapter(val context: Context): RecyclerView.Adapter<SelectClie
                  clientViewModel.updateToClient(updatedToClient)
                  clientViewModel.updateFromClient(updatedFromClient)
                  val transaction = Transactions(
-                     1,
+                     0,
                      updatedFromClient.clientName,
                      updatedToClient.clientName,
                      money!!
@@ -85,8 +87,10 @@ class SelectClientAdapter(val context: Context): RecyclerView.Adapter<SelectClie
         return clients.size
     }
     fun setData(data: List<Clients>){
+        val diffUtilCallback = ClientsDiffUtil(clients, data)
+        val diffResult = DiffUtil.calculateDiff(diffUtilCallback)
         clients = data
-        notifyDataSetChanged()
+        diffResult.dispatchUpdatesTo(this)
     }
     fun setValues(fromClient: Clients, money: Int){
         this.fromClient = fromClient

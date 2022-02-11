@@ -10,7 +10,7 @@ import kotlinx.parcelize.Parcelize
 data class Transactions(
     @PrimaryKey(autoGenerate = true)
     var id: Int,
-    val from_clientName: String,
-    val to_clientName: String,
-    val moneyTransfer: Double
+    var from_clientName: String,
+    var to_clientName: String,
+    var moneyTransfer: Double
 ):Parcelable

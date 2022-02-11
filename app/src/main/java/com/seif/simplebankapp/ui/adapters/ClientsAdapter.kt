@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.findNavController
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.seif.simplebankapp.R
@@ -11,6 +12,7 @@ import com.seif.simplebankapp.data.models.Clients
 import com.seif.simplebankapp.databinding.ItemRowClientBinding
 import com.seif.simplebankapp.ui.fragments.ClientsFragment
 import com.seif.simplebankapp.ui.fragments.ClientsFragmentDirections
+import com.seif.simplebankapp.utils.ClientsDiffUtil
 
 class ClientsAdapter : RecyclerView.Adapter<ClientsAdapter.MyViewHolder>() {
     var clientsData = emptyList<Clients>()
@@ -47,8 +49,10 @@ class ClientsAdapter : RecyclerView.Adapter<ClientsAdapter.MyViewHolder>() {
     }
 
     fun setData(clients: List<Clients>) {
+        val diffUtilCallback = ClientsDiffUtil(clientsData, clients)
+        val diffResult = DiffUtil.calculateDiff(diffUtilCallback)
         clientsData = clients
-        notifyDataSetChanged()
+        diffResult.dispatchUpdatesTo(this)
     }
 
 }
