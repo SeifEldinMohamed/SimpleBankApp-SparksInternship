@@ -19,6 +19,10 @@ class RepositoryImp(private val dao: BankDatabaseDao): Repository {
         return dao.getAllClients()
     }
 
+    override fun getSelectedClients(clientName: String): LiveData<List<Clients>> {
+        return dao.getSelectedClients(clientName)
+    }
+
     override suspend fun addTransaction(transaction: Transactions) {
         dao.addTransaction(transaction)
     }

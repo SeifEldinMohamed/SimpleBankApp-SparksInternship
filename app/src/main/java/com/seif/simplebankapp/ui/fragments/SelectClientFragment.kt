@@ -34,7 +34,7 @@ lateinit var binding: FragmentSelectClientBinding
         val fromClient:Clients = fromBundle(requireArguments()).fromClient
         val money: Int = fromBundle(requireArguments()).money.toInt()
         selectClientAdapter.setValues(fromClient, money)
-        clientViewModel.clients.observe(viewLifecycleOwner, Observer {
+        clientViewModel.getAllSelectedClients(fromClient.clientName).observe(viewLifecycleOwner, Observer {
             selectClientAdapter.setData(it)
         })
         setUpRecyclerView()

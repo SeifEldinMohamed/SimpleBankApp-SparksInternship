@@ -8,7 +8,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
 import com.seif.simplebankapp.data.BankDatabase
 import com.seif.simplebankapp.data.models.Clients
-import com.seif.simplebankapp.data.models.Transactions
 import com.seif.simplebankapp.data.repository.RepositoryImp
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -19,6 +18,9 @@ class ClientsViewModel(application: Application): AndroidViewModel(application) 
     val clients: LiveData<List<Clients>> = repository.getAllClients()
     private lateinit var shared :SharedPreferences
 
+    fun getAllSelectedClients(clientName:String):LiveData<List<Clients>>{
+        return repository.getSelectedClients(clientName)
+    }
 
     fun addClients(client:List<Clients>){
         viewModelScope.launch(Dispatchers.IO) {

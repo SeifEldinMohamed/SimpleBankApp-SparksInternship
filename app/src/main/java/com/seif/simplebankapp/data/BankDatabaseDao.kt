@@ -15,12 +15,15 @@ interface BankDatabaseDao {
     suspend fun updateClient(client: Clients)
 
     @Query("SELECT * FROM CLIENTS")
-     fun getAllClients(): LiveData<List<Clients>>
+    fun getAllClients(): LiveData<List<Clients>>
 
-     // Transactions
-     @Insert(onConflict = OnConflictStrategy.IGNORE)
-     suspend fun addTransaction(transaction: Transactions)
+    @Query("SELECT * FROM CLIENTS WHERE clientName IS NOT :clientName ")
+    fun getSelectedClients(clientName: String): LiveData<List<Clients>>
 
-     @Query("SELECT * FROM TRANSACTIONS")
-     fun getAllTransactions(): LiveData<List<Transactions>>
+    // Transactions
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    suspend fun addTransaction(transaction: Transactions)
+
+    @Query("SELECT * FROM TRANSACTIONS")
+    fun getAllTransactions(): LiveData<List<Transactions>>
 }

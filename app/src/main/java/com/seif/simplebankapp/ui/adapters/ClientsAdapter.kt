@@ -52,7 +52,7 @@ class ClientsAdapter : RecyclerView.Adapter<ClientsAdapter.MyViewHolder>() {
         val diffUtilCallback = ClientsDiffUtil(clientsData, clients)
         val diffResult = DiffUtil.calculateDiff(diffUtilCallback)
         clientsData = clients
-        diffResult.dispatchUpdatesTo(this)
+        diffResult.dispatchUpdatesTo(this) // Dispatches the update events to the given adapter.
     }
 
 }

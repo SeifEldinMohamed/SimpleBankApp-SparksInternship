@@ -8,9 +8,11 @@ interface Repository {
     suspend fun addClients(client: Clients)
     suspend fun updateClient(client: Clients)
     fun getAllClients(): LiveData<List<Clients>>
+    fun getSelectedClients(clientName: String): LiveData<List<Clients>>
 
     // transactions
     suspend fun addTransaction(transaction: Transactions)
     fun getAllTransactions(): LiveData<List<Transactions>>
+
 
 }
